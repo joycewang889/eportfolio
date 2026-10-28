@@ -86,6 +86,14 @@ figure { margin: 0; min-width: 0; }
 figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
 figcaption { font-size: 13px; color: var(--muted); margin-top: 7px; line-height: 1.45; }
 .narrow { max-width: 300px; }
+.flexrow { display: grid; grid-template-columns: 100px minmax(0, 1fr) 240px; gap: 28px; align-items: start; }
+.flexrow > * { min-width: 0; }
+.vstrip img { max-width: 100px; }
+@media (max-width: 860px) {
+  .flexrow { grid-template-columns: 76px minmax(0, 1fr); gap: 16px; }
+  .vstrip img { max-width: 76px; }
+  .flexrow .side { grid-column: 1 / -1; max-width: 280px; }
+}
 
 .specs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 6px; background: var(--surface); margin-bottom: 26px; }
 .specs.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
